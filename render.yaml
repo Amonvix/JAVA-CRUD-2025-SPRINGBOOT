@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: java-crud-2025
+    env: java
+    plan: free
+    buildCommand: "./mvnw clean install"
+    startCommand: "java -jar target/crud-java-2025-0.0.1-SNAPSHOT.jar"
+    envVars: []
