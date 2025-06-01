@@ -11,6 +11,6 @@ public class RootController {
 
     @GetMapping("/")
     public String redirectToTasks() {
-        return "redirect:/api/tasks";
+        return "redirect:/swagger-ui/index.html";
     }
 }
