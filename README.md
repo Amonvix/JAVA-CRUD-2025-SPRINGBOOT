@@ -2,7 +2,7 @@
 ![Java CI](https://github.com/Amonvix/JAVA-CRUD-2025-SPRINGBOOT/actions/workflows/ci.yml/badge.svg)
 
 
-This is a full-featured RESTful API for managing tasks (to-do items), built with **Java 17** and **Spring Boot**.  
+This is a full-featured RESTful API for managing tasks (to-do items), built with **Java 17** and **Spring Boot**.
 Designed with clean architecture and layered structure: `Model`, `Repository`, `Service`, and `Controller`.
 
 > ✅ Perfect for portfolios, REST practice, and showcasing backend skills in job applications.
