@@ -1,77 +1,77 @@
-# 📋 CRUD Java 2025 — Spring Boot API
+# 🧩 CRUD Java 2025 - Spring Boot API
+
 [![Deploy on Render](https://img.shields.io/badge/Render-Deployed-%2300c7b7?style=for-the-badge&logo=render&logoColor=white)](https://java-crud-2025-springboot.onrender.com)
 
-![Maven Build](https://img.shields.io/badge/Maven-Build%20Success-brightgreen?style=for-the-badge&logo=apachemaven)
+Aplicação RESTful construída com **Spring Boot**, com endpoints completos para gerenciamento de tarefas.
 
-
-
-This is a full-featured RESTful API for managing tasks (to-do items), built with **Java 17** and **Spring Boot**.
-Designed with clean architecture and layered structure: `Model`, `Repository`, `Service`, and `Controller`.
-
-> ✅ Perfect for portfolios, REST practice, and showcasing backend skills in job applications.
+> 💡 Projeto hospedado em:  
+> [`https://java-crud-2025-springboot.onrender.com`](https://java-crud-2025-springboot.onrender.com)
 
 ---
 
-## 🚀 Features
+## 📚 Tecnologias
 
-- ✅ Create, read, update and delete tasks
-- 📦 In-memory database with H2
-- ⚙️ Maven Wrapper included
-- 📁 Clean code, layered architecture
-- 🌐 REST endpoints fully documented in code
-
----
-
-## 📂 Project Structure
-├── model → Entity classes (e.g., Task)
-├── repository → Data access layer (JPA)
-├── service → Business logic
-├── controller → REST API endpoints
-└── resources/
-└── application.properties
+- Java 17  
+- Spring Boot 3.5  
+- Spring Data JPA  
+- H2 Database (modo memória)  
+- Swagger (documentação automática)  
+- Docker (para build e deploy no Render)
 
 ---
 
-## ⚙️ Technologies Used
+## 🚀 Endpoints REST
 
-- Java 17
-- Spring Boot 3+
-- Spring Web
-- Spring Data JPA
-- H2 Database
-- Maven
+| Método | Rota                     | Descrição                   |
+|--------|--------------------------|-----------------------------|
+| GET    | `/api/tasks`             | Lista todas as tarefas      |
+| GET    | `/api/tasks/{id}`        | Retorna uma tarefa por ID   |
+| POST   | `/api/tasks`             | Cria uma nova tarefa        |
+| PUT    | `/api/tasks/{id}`        | Atualiza uma tarefa         |
+| DELETE | `/api/tasks/{id}`        | Remove uma tarefa           |
 
 ---
 
-## 🧪 Running Locally
+## ⚙️ Execução local
 
 ```bash
-# Give permission to Maven wrapper
-chmod +x mvnw
+# Build
+./mvnw clean package
 
-# Run the project
-./mvnw spring-boot:run
-```
+# Run
+java -jar target/crud-java-2025-0.0.1-SNAPSHOT.jar
 
-Access:
+A API estará acessível em:
+http://localhost:8080
 
-API: http://localhost:8080/api/tasks
 
-H2 Console: http://localhost:8080/h2-console
-JDBC URL: jdbc:h2:mem:testdb | User: sa
+🔬 Acesso Swagger (Documentação)
+Após o deploy:
+https://java-crud-2025-springboot.onrender.com/swagger-ui.html
+ou
+/swagger-ui/index.html
 
-🔁 API Endpoints
-Method	Endpoint	Description
-GET	/api/tasks	List all tasks
-GET	/api/tasks/{id}	Get task by ID
-POST	/api/tasks	Create new task
-PUT	/api/tasks/{id}	Update task
-DELETE	/api/tasks/{id}	Delete task by ID
 
-🤝 Contributing
-Pull requests are welcome! For major changes, please open an issue first.
-This project was built for learning and showcasing backend structure in Java.
+🗃️ Modelo da entidade
+{
+  "id": 1,
+  "title": "Exemplo de tarefa",
+  "description": "Descrição da tarefa",
+  "completed": false
+}
 
-📬 Contact
-Created by Daniel Pedroso (Amon) — LinkedIn
-Feel free to reach out for collaborations, feedback, or coffee ☕.
+📦 Dockerfile
+A aplicação é containerizada para o Render com:
+FROM openjdk:17-slim
+EXPOSE 8080
+WORKDIR /app
+COPY target/crud-java-2025-0.0.1-SNAPSHOT.jar app.jar
+CMD ["java", "-jar", "app.jar"]
+
+🧠 Observação
+Este projeto utiliza H2 em memória — os dados são reiniciados a cada deploy.
+Em produção real, use PostgreSQL ou outro banco persistente.
+
+👨‍💻 Autor
+Daniel Pedroso (Amon)
+Desenvolvedor Backend | Java & Python | Projetos com foco em qualidade e deploy profissional.
