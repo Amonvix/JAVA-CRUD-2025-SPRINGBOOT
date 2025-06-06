@@ -1,5 +1,5 @@
 # 📋 CRUD Java 2025 — Spring Boot API
-[![Deploy on Render](https://img.shields.io/badge/Render-Deployed-%2300c7b7?style=for-the-badge&logo=render&logoColor=white)](https://crud-java-2025-0.0.1-SNAPSHOT.onrender.com)
+[![Deploy on Render](https://img.shields.io/badge/Render-Deployed-%2300c7b7?style=for-the-badge&logo=render&logoColor=white)](https://java-crud-2025-springboot.onrender.com)
 
 ![Maven Build](https://img.shields.io/badge/Maven-Build%20Success-brightgreen?style=for-the-badge&logo=apachemaven)
 
