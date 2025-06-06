@@ -1,5 +1,8 @@
 # 📋 CRUD Java 2025 — Spring Boot API
-![Java CI](https://github.com/Amonvix/JAVA-CRUD-2025-SPRINGBOOT/actions/workflows/ci.yml/badge.svg)
+[![Deploy on Render](https://img.shields.io/badge/Render-Deployed-%2300c7b7?style=for-the-badge&logo=render&logoColor=white)](https://crud-java-2025-0.0.1-SNAPSHOT.onrender.com)
+
+![Maven Build](https://img.shields.io/badge/Maven-Build%20Success-brightgreen?style=for-the-badge&logo=apachemaven)
+
 
 
 This is a full-featured RESTful API for managing tasks (to-do items), built with **Java 17** and **Spring Boot**.
