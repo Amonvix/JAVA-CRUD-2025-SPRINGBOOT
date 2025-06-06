@@ -1,5 +1,5 @@
         FROM openjdk:17-slim
         EXPOSE 8080
         WORKDIR /app
-        COPY . .
-        CMD ["java", "-jar", "target/crud-java-2025-0.0.1-SNAPSHOT.jar"]
+        COPY target/crud-java-2025-0.0.1-SNAPSHOT.jar app.jar
+        CMD ["java", "-jar", "app.jar"]
