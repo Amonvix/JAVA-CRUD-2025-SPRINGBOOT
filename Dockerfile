@@ -8,5 +8,6 @@ RUN ./mvnw clean package
 
 EXPOSE 8080
 
-CMD ["java", "-Dserver.port=$PORT", "-jar", "target/crud-java-2025-0.0.1-SNAPSHOT.jar"]
+CMD java -Dserver.port=$PORT -jar target/crud-java-2025-0.0.1-SNAPSHOT.jar
 
+RUN chmod +x mvnw && ./mvnw clean package
