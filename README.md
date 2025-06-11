@@ -1,77 +1,88 @@
-# 📋 CRUD Java 2025 — Spring Boot API
-[![Deploy on Render](https://img.shields.io/badge/Render-Deployed-%2300c7b7?style=for-the-badge&logo=render&logoColor=white)](https://crud-java-2025-0.0.1-SNAPSHOT.onrender.com)
+# 🧩 CRUD Java 2025 - Spring Boot API
 
-![Maven Build](https://img.shields.io/badge/Maven-Build%20Success-brightgreen?style=for-the-badge&logo=apachemaven)
+[![Deploy on Fly.io](https://img.shields.io/badge/Fly.io-Deployed-%230072ff?style=for-the-badge&logo=flydotio&logoColor=white)](https://java-crud-2025-springboot.fly.dev)
 
+🧩 CRUD Java 2025 - Spring Boot API
 
-
-This is a full-featured RESTful API for managing tasks (to-do items), built with **Java 17** and **Spring Boot**.
-Designed with clean architecture and layered structure: `Model`, `Repository`, `Service`, and `Controller`.
-
-> ✅ Perfect for portfolios, REST practice, and showcasing backend skills in job applications.
+[![Status](https://img.shields.io/website?down_color=red&down_message=Offline&style=for-the-badge&up_color=brightgreen&up_message=Online&url=https%3A%2F%2Fjava-crud-2025-springboot.fly.dev)](https://java-crud-2025-springboot.fly.dev)
 
 ---
 
-## 🚀 Features
+## 📚 Tecnologias
 
-- ✅ Create, read, update and delete tasks
-- 📦 In-memory database with H2
-- ⚙️ Maven Wrapper included
-- 📁 Clean code, layered architecture
-- 🌐 REST endpoints fully documented in code
-
----
-
-## 📂 Project Structure
-├── model → Entity classes (e.g., Task)
-├── repository → Data access layer (JPA)
-├── service → Business logic
-├── controller → REST API endpoints
-└── resources/
-└── application.properties
+- Java 17  
+- Spring Boot 3.5  
+- Spring Data JPA  
+- H2 Database (modo memória)  
+- Swagger (documentação automática)  
+- Docker + Fly.io(para deploy na Nuvem)
 
 ---
 
-## ⚙️ Technologies Used
+## 🚀 Endpoints REST
 
-- Java 17
-- Spring Boot 3+
-- Spring Web
-- Spring Data JPA
-- H2 Database
-- Maven
+| Método | Rota                     | Descrição                   |
+|--------|--------------------------|-----------------------------|
+| GET    | `/api/tasks`             | Lista todas as tarefas      |
+| GET    | `/api/tasks/{id}`        | Retorna uma tarefa por ID   |
+| POST   | `/api/tasks`             | Cria uma nova tarefa        |
+| PUT    | `/api/tasks/{id}`        | Atualiza uma tarefa         |
+| DELETE | `/api/tasks/{id}`        | Remove uma tarefa           |
 
 ---
 
-## 🧪 Running Locally
+## ⚙️ Execução local
 
 ```bash
-# Give permission to Maven wrapper
-chmod +x mvnw
+# Build
+./mvnw clean package
 
-# Run the project
-./mvnw spring-boot:run
-```
+# Run
+java -jar target/crud-java-2025-0.0.1-SNAPSHOT.jar
 
-Access:
+A API estará acessível em:
+http://localhost:8080
 
-API: http://localhost:8080/api/tasks
 
-H2 Console: http://localhost:8080/h2-console
-JDBC URL: jdbc:h2:mem:testdb | User: sa
+📦 Dockerfile usado no Fly.io
 
-🔁 API Endpoints
-Method	Endpoint	Description
-GET	/api/tasks	List all tasks
-GET	/api/tasks/{id}	Get task by ID
-POST	/api/tasks	Create new task
-PUT	/api/tasks/{id}	Update task
-DELETE	/api/tasks/{id}	Delete task by ID
+'''
+FROM openjdk:17-slim
+EXPOSE 8080
+WORKDIR /app
+COPY target/crud-java-2025-0.0.1-SNAPSHOT.jar app.jar
+CMD ["java", "-Dserver.port=${PORT}", "-jar", "app.jar"]
+'''
 
-🤝 Contributing
-Pull requests are welcome! For major changes, please open an issue first.
-This project was built for learning and showcasing backend structure in Java.
+🧠 Observações
 
-📬 Contact
-Created by Daniel Pedroso (Amon) — LinkedIn
-Feel free to reach out for collaborations, feedback, or coffee ☕.
+Projeto usa H2 em memória, ou seja: os dados somem a cada reinício/deploy.
+
+Ideal para testes, aprendizado e demonstrações.
+
+Produção real? Substitua por PostgreSQL ou outro banco persistente.
+
+
+📖 Swagger
+
+Documentação automática disponível em:
+
+'''
+/swagger-ui.html
+ou
+/swagger-ui/index.html
+'''
+Após o deploy:https://java-crud-2025-springboot.fly.dev/swagger-ui.html
+
+🧪 Exemplo de Payload
+{
+  "id": 1,
+  "title": "Exemplo de tarefa",
+  "description": "Descrição da tarefa",
+  "completed": false
+}
+
+
+👨‍💻 Autor
+Daniel Pedroso (Amon)
+Desenvolvedor Backend | Java & Python | Projetos com foco em qualidade e deploy profissional.
