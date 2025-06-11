@@ -1,11 +1,10 @@
 # 🧩 CRUD Java 2025 - Spring Boot API
 
-[![Deploy on Render](https://img.shields.io/badge/Render-Deployed-%2300c7b7?style=for-the-badge&logo=render&logoColor=white)](https://java-crud-2025-springboot.onrender.com)
+[![Deploy on Fly.io](https://img.shields.io/badge/Fly.io-Deployed-%230072ff?style=for-the-badge&logo=flydotio&logoColor=white)](https://java-crud-2025-springboot.fly.dev)
 
-Aplicação RESTful construída com **Spring Boot**, com endpoints completos para gerenciamento de tarefas.
+🧩 CRUD Java 2025 - Spring Boot API
 
-> 💡 Projeto hospedado em:  
-> [`https://java-crud-2025-springboot.onrender.com`](https://java-crud-2025-springboot.onrender.com)
+[![Status](https://img.shields.io/website?down_color=red&down_message=Offline&style=for-the-badge&up_color=brightgreen&up_message=Online&url=https%3A%2F%2Fjava-crud-2025-springboot.fly.dev)](https://java-crud-2025-springboot.fly.dev)
 
 ---
 
@@ -16,7 +15,7 @@ Aplicação RESTful construída com **Spring Boot**, com endpoints completos par
 - Spring Data JPA  
 - H2 Database (modo memória)  
 - Swagger (documentação automática)  
-- Docker (para build e deploy no Render)
+- Docker + Fly.io(para deploy na Nuvem)
 
 ---
 
@@ -45,14 +44,37 @@ A API estará acessível em:
 http://localhost:8080
 
 
-🔬 Acesso Swagger (Documentação)
-Após o deploy:
-https://java-crud-2025-springboot.onrender.com/swagger-ui.html
+📦 Dockerfile usado no Fly.io
+
+'''
+FROM openjdk:17-slim
+EXPOSE 8080
+WORKDIR /app
+COPY target/crud-java-2025-0.0.1-SNAPSHOT.jar app.jar
+CMD ["java", "-Dserver.port=${PORT}", "-jar", "app.jar"]
+'''
+
+🧠 Observações
+
+Projeto usa H2 em memória, ou seja: os dados somem a cada reinício/deploy.
+
+Ideal para testes, aprendizado e demonstrações.
+
+Produção real? Substitua por PostgreSQL ou outro banco persistente.
+
+
+📖 Swagger
+
+Documentação automática disponível em:
+
+'''
+/swagger-ui.html
 ou
 /swagger-ui/index.html
+'''
+Após o deploy:https://java-crud-2025-springboot.fly.dev/swagger-ui.html
 
-
-🗃️ Modelo da entidade
+🧪 Exemplo de Payload
 {
   "id": 1,
   "title": "Exemplo de tarefa",
@@ -60,17 +82,6 @@ ou
   "completed": false
 }
 
-📦 Dockerfile
-A aplicação é containerizada para o Render com:
-FROM openjdk:17-slim
-EXPOSE 8080
-WORKDIR /app
-COPY target/crud-java-2025-0.0.1-SNAPSHOT.jar app.jar
-CMD ["java", "-jar", "app.jar"]
-
-🧠 Observação
-Este projeto utiliza H2 em memória — os dados são reiniciados a cada deploy.
-Em produção real, use PostgreSQL ou outro banco persistente.
 
 👨‍💻 Autor
 Daniel Pedroso (Amon)
